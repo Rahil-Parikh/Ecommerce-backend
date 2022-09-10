@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: jewels
+#    url: jdbc:postgresql://jewels-postgres/ecommerce
+#    url: jdbc:postgresql://localhost:5432/ecommerce
+    url: ${POSTGRES_DOCKER:jdbc:postgresql://jewels-postgres/ecommerce}
+    username: postgres
+  jpa:
+    show-sql: false
+    hibernate:
+#      show:
+#      naming:
+#        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.PostgreSQL95Dialect
+    properties:
+      hibernate:
+        temp:
+          use_jdbc_metadata_defaults: false
+  liquibase:
+    enabled : false
+    drop-first: true
+server:
+  port: 5001
+  ssl:
+    enabled: ${SSL_STATE:true}
+#    key-store: /home/zillions/Hub/Work/keystore.p12
+    key-store: /home/keystore.p12
+    key-store-password: pass
+    keyStoreType: PKCS12
+    keyAlias: tomcat

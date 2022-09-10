@@ -1,0 +1,35 @@
+version: '2'
+services:
+    backend:
+        container_name: jewels-springboot
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: jewels-springboot:latest
+        ports:
+            - 5001:5001
+        networks:
+            - cloud-network
+    fontend:
+        container_name: jewels-reactjs
+        build:
+            context: jewels-reactjs
+            dockerfile: Dockerfile
+        image: jewels-reactjs:latest
+        ports:
+            - 5000:5000
+        networks:
+            - cloud-network
+    database:
+        container_name: jewels-postgres
+        image: postgres
+        environment:
+          POSTGRES_DB: ecommerce
+          POSTGRES_PASSWORD: jewels
+        ports:
+            - 5432:5432
+        networks:
+            - cloud-network
+networks:
+    cloud-network:
+        driver: bridge
