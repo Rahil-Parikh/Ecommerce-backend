@@ -19,7 +19,7 @@ A product attempted to buy is added to the list of Orders and the payment status
 <h2>Payment Gateway</h2>
 Razorpay gateway is used for making payments and keeping track of payment status
 
-<h2>Postgresql Database Schema</h2>
+<h2>Postgresql Database Schema <img style="width:30px;" src="https://icons-for-free.com/iconfiles/png/512/postgresql+plain-1324760555607314126.png" /></h2>
 <img src ="https://user-images.githubusercontent.com/46090098/189498678-6d610fd4-cee7-4172-a3e5-d8730c9edf7f.png" alt="database schema"/>
 
 <h2>Docker <img style="width:30px;" src="https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png" /></h2>
