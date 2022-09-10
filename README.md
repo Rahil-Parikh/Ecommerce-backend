@@ -28,5 +28,6 @@ The <em>Dockerfile</em> builds a containerized application for the build version
 
 <h2>Jenkins <img style="width:30px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jenkins_logo.svg/1200px-Jenkins_logo.svg.png" /></h2>
 The <em>Jenkinsfile</em> builds the entire project on the local machine with <b>Maven</b> and builds multi-container image for docker application using <b>Compose</b>. Once the images are build, they are pushed to the jfrog artifactory with latest tags. On the server machine, it pulls the latest tagged images and runs the the multi-container docker application on the server.
-
-**Note : This project is tailored to a jewelry ecommerce backend with products having attributes similar to jewelry products**
+<br/>
+<br/>
+<b>Note : This project is tailored to a jewelry ecommerce backend with products having attributes similar to jewelry products</b>
