@@ -1,0 +1,1606 @@
+{
+	"info": {
+		"_postman_id": "9eeef69d-33f3-41d3-a2f2-2161d69e8446",
+		"name": "Ecommerce server",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\" : \"admin\",\n    \"password\":\"adminpass123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/authenticate",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"rapgod\",\n    \"password\":\"passpass\",\n    \"firstName\":\"Rahil\",\n    \"lastName\":\"Parikh\",\n    \"emailId\":\"rahilparikh365@gmail.com\",\n    \"phoneNumber\":\"9326682056\",\n    \"addressLine1\":\"Address Line 1\",\n    \"addressLine2\":\"Address Line 2\",\n    \"pinCode\":400004,\n    \"city\":\"Mumbai\",\n    \"country\":\"India\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/register",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ConfirmOtp",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/confirmEmailId/rapgod/712391",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"confirmEmailId",
+								"rapgod",
+								"712391"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LoginNewUser",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\" : \"rapgod\",\n    \"password\":\"passpass\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/authenticate",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "authorizedRequest",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYyNjU3NjEzNCwiaWF0IjoxNjI2NTQwMTM0fQ.2CbK9BWB_aQF9IfIO1pdyNyReqmOMBpUNryLwf1zDa4",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/mailMe",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"mailMe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CheckAuthAdmin",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYyOTc0MDE2MSwiaWF0IjoxNjI5NzA0MTYxfQ.etUNas_S3GuVyJjI9HTmi4zke6TRrMYgHG9EsWhgNNQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/admin",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CheckAuthUser",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNjI5MDQyMDg1LCJpYXQiOjE2MjkwMDYwODV9.Q5YEZ2S2y4clSg1PCzQaJj17eeNCv9k7Loc51MVUfgE",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/user",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/deleteAuthTokens",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"deleteAuthTokens"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "FullProfile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/myProfile/all",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"myProfile",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "FirstName",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/myProfile/firstName",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"myProfile",
+								"firstName"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "checkAdminRights",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYyOTc0MDg2OCwiaWF0IjoxNjI5NzA0ODY4fQ.xtqVZTDf5uuDsKXqyv7OPkqGfi5MyF4yrPiv5iY34h4",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/admin/check",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"admin",
+								"check"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ImageKit Auth",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://trepechyjewels.tk:5001/ImageUploadAuth",
+							"protocol": "http",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"ImageUploadAuth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddProduct",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYyOTc0MDE2MSwiaWF0IjoxNjI5NzA0MTYxfQ.etUNas_S3GuVyJjI9HTmi4zke6TRrMYgHG9EsWhgNNQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "productName",
+									"value": "name of product2",
+									"type": "text"
+								},
+								{
+									"key": "diamond",
+									"value": "Round Brilliant Cut",
+									"type": "text"
+								},
+								{
+									"key": "oldPrice",
+									"value": "100.00",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "50.00",
+									"type": "text"
+								},
+								{
+									"key": "diamondSetting",
+									"value": "MicroProng",
+									"type": "text"
+								},
+								{
+									"key": "clarity",
+									"value": "IFtoVVS2",
+									"type": "text"
+								},
+								{
+									"key": "color",
+									"value": "GtoI",
+									"type": "text"
+								},
+								{
+									"key": "purity",
+									"value": "kt18",
+									"type": "text"
+								},
+								{
+									"key": "metal",
+									"value": "RoseGold",
+									"type": "text"
+								},
+								{
+									"key": "leftImages",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "bottomImages",
+									"value": "",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/admin/addProduct",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"admin",
+								"addProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddProduct Sheet Copy",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYyOTc0MDE2MSwiaWF0IjoxNjI5NzA0MTYxfQ.etUNas_S3GuVyJjI9HTmi4zke6TRrMYgHG9EsWhgNNQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "productSheet",
+									"type": "file",
+									"src": "/home/zillions/Downloads/Components.xlsx"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://trepechyjewels.tk:5001/admin/addProductSheet",
+							"protocol": "http",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"admin",
+								"addProductSheet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateProduct",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYyODk4NTY5OCwiaWF0IjoxNjI4OTQ5Njk4fQ.dwt_t1kI-VOC7VnJHAlR3cDakgtN03v9s97piHEVtp8",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "id",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "productName",
+									"value": "name of productssssssss",
+									"type": "text"
+								},
+								{
+									"key": "diamond",
+									"value": "Round Brilliant Cut",
+									"type": "text"
+								},
+								{
+									"key": "oldPrice",
+									"value": "100.00",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "50.00",
+									"type": "text"
+								},
+								{
+									"key": "diamondSetting",
+									"value": "ProngSetting",
+									"type": "text"
+								},
+								{
+									"key": "clarity",
+									"value": "IFtoVVS2",
+									"type": "text"
+								},
+								{
+									"key": "color",
+									"value": "GtoI",
+									"type": "text"
+								},
+								{
+									"key": "purity",
+									"value": "kt18",
+									"type": "text"
+								},
+								{
+									"key": "metal",
+									"value": "RoseGold",
+									"type": "text"
+								},
+								{
+									"key": "leftImages",
+									"type": "file",
+									"src": "/home/zillions/Pictures/tt2.png"
+								},
+								{
+									"key": "bottomImages",
+									"type": "file",
+									"src": "/home/zillions/Pictures/tt3.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/admin/updateProduct",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"admin",
+								"updateProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteProduct",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYyOTA0MjI0OCwiaWF0IjoxNjI5MDA2MjQ4fQ.0o5qwAk9zXgE7yjEGsD8KXP8JJbNhdw6ymy2eqOIL1k",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/admin/deleteProduct/1",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"admin",
+								"deleteProduct",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteListOfProducts",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYyOTA0MjI0OCwiaWF0IjoxNjI5MDA2MjQ4fQ.0o5qwAk9zXgE7yjEGsD8KXP8JJbNhdw6ymy2eqOIL1k",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productIdList\":[2,3]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/admin/deleteListOfProducts",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"admin",
+								"deleteListOfProducts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllProducts",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYyOTc0MDE2MSwiaWF0IjoxNjI5NzA0MTYxfQ.etUNas_S3GuVyJjI9HTmi4zke6TRrMYgHG9EsWhgNNQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/admin/getAllProduct/",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"admin",
+								"getAllProduct",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProductByID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYyOTc0MDE2MSwiaWF0IjoxNjI5NzA0MTYxfQ.etUNas_S3GuVyJjI9HTmi4zke6TRrMYgHG9EsWhgNNQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/admin/getProductById/2/",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"admin",
+								"getProductById",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Shopping Cart",
+			"item": [
+				{
+					"name": "AddToCart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\":2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/shoppingCart/addProduct",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"shoppingCart",
+								"addProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddProductListToCart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productIdList\":[2,3]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/shoppingCart/addMultipleProducts",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"shoppingCart",
+								"addMultipleProducts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RemoveProductsFromCart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/shoppingCart/removeProduct",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"shoppingCart",
+								"removeProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RemoveProductListFromCart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productIdList\":[1,2]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/shoppingCart/removeMultipleProducts",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"shoppingCart",
+								"removeMultipleProducts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ReadCart",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/shoppingCart/readCart",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"shoppingCart",
+								"readCart"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "WishList",
+			"item": [
+				{
+					"name": "AddToCart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\":151\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/shoppingCart/addProduct",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"shoppingCart",
+								"addProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddProductListToCart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productIdList\":[2,3]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/wishList/addMultipleProducts",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"wishList",
+								"addMultipleProducts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RemoveProductsFromCart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productId\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/wishList/removeProduct",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"wishList",
+								"removeProduct"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RemoveProductListFromCart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productIdList\":[2,3]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/wishList/removeMultipleProducts",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"wishList",
+								"removeMultipleProducts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ReadCart",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/wishList/readCart",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"wishList",
+								"readCart"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Starter",
+			"item": [
+				{
+					"name": "login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\" : \"admin\",\n    \"password\":\"adminpass123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/authenticate",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddDiamondChartSheet",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYyOTc0MDE2MSwiaWF0IjoxNjI5NzA0MTYxfQ.etUNas_S3GuVyJjI9HTmi4zke6TRrMYgHG9EsWhgNNQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "productSheet",
+									"type": "file",
+									"src": "/home/zillions/Downloads/Diamond Chart(5).xlsx"
+								},
+								{
+									"key": "onlyPricing",
+									"value": "false",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/admin/addDiamondChartAndPrices",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"admin",
+								"addDiamondChartAndPrices"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddProductSheet",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYyOTc0MDE2MSwiaWF0IjoxNjI5NzA0MTYxfQ.etUNas_S3GuVyJjI9HTmi4zke6TRrMYgHG9EsWhgNNQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "productSheet",
+									"type": "file",
+									"src": "/home/zillions/Downloads/TrepechyJewels NEWProducts(1).xlsx"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/admin/addProductSheet",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"admin",
+								"addProductSheet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddMetalPriceAndMakingPrice",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYyOTc0MDE2MSwiaWF0IjoxNjI5NzA0MTYxfQ.etUNas_S3GuVyJjI9HTmi4zke6TRrMYgHG9EsWhgNNQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "productSheet",
+									"type": "file",
+									"src": "/home/zillions/Downloads/Metal Price Sheet(3).xlsx"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/admin/addMetalAndMakingPriceSheet",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"admin",
+								"addMetalAndMakingPriceSheet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetProductByIDWithPrices Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYyOTc0MDE2MSwiaWF0IjoxNjI5NzA0MTYxfQ.etUNas_S3GuVyJjI9HTmi4zke6TRrMYgHG9EsWhgNNQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://trepechyjewels.tk:5001/admin/getProductByIdWithPrices/44/",
+							"protocol": "https",
+							"host": [
+								"trepechyjewels",
+								"tk"
+							],
+							"port": "5001",
+							"path": [
+								"admin",
+								"getProductByIdWithPrices",
+								"44",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "AddProductListToOrder",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"cartProductsRequestList\": [\n        {\n            \"productId\": 1,\n            \"clarityAndColor\": \"IFtoVVS2_DtoF\",\n            \"purity\": \"NA\",\n            \"metal\": \"Platinum\",\n            \"ringSize\": \"A\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/orders/addOrderList",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"orders",
+								"addOrderList"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ReadAllOrders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productIdList\":[1]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/orders/readAll/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"orders",
+								"readAll",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ReadUserOrders",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/orders/showUserOrders/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"orders",
+								"showUserOrders",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5001/orders/order_IQdgG62ggsB1dy",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"orders",
+								"order_IQdgG62ggsB1dy"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UpdateTrackingStatus",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"admin\",\n    \"orderId\":3,\n    \"trackingStatus\":\"Dispatched\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5001/orders/updateTrackingStatus",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"orders",
+								"updateTrackingStatus"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Diamond",
+			"item": [
+				{
+					"name": "AddDiamonds Sheet",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYyOTc0MDE2MSwiaWF0IjoxNjI5NzA0MTYxfQ.etUNas_S3GuVyJjI9HTmi4zke6TRrMYgHG9EsWhgNNQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "productSheet",
+									"type": "file",
+									"src": "/home/zillions/Downloads/Diamond Chart(5).xlsx"
+								},
+								{
+									"key": "onlyPricing",
+									"value": "false",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5001/admin/addDiamondChartAndPrices",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"admin",
+								"addDiamondChartAndPrices"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": "",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddDiamonds Sheet Copy",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYyOTc0MDE2MSwiaWF0IjoxNjI5NzA0MTYxfQ.etUNas_S3GuVyJjI9HTmi4zke6TRrMYgHG9EsWhgNNQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "productSheet",
+									"type": "file",
+									"src": "/home/zillions/Downloads/TrepechyJewels Products.xlsx"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5001/admin/addProductSheet",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"admin",
+								"addProductSheet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "AddDiamonds Sheet Copy 2",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYyOTc0MDE2MSwiaWF0IjoxNjI5NzA0MTYxfQ.etUNas_S3GuVyJjI9HTmi4zke6TRrMYgHG9EsWhgNNQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "productSheet",
+									"type": "file",
+									"src": "/home/zillions/Downloads/TrepechyJewels Products.xlsx"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5001/admin/addProductSheet",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"admin",
+								"addProductSheet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetAllProductsWithPrices",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYyOTc0MDE2MSwiaWF0IjoxNjI5NzA0MTYxfQ.etUNas_S3GuVyJjI9HTmi4zke6TRrMYgHG9EsWhgNNQ",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "http://localhost:5001/admin/getAllProductWithPrices/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5001",
+							"path": [
+								"admin",
+								"getAllProductWithPrices",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "Token",
+			"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTYyOTc4MTk5MCwiaWF0IjoxNjI5NzQ1OTkwfQ.yslNunxSmp76656ZGRPETJPBNEXHe3rKAACXNIdL2Fs"
+		}
+	]
+}
