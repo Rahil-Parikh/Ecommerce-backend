@@ -50,6 +50,16 @@ pipeline {
                 sh 'sudo docker-compose down'
             }
         }
+        stage('Refreshing SSL keystore'){
+            agent {
+              label 'ec2-ssh-server-node'
+            }
+            steps{
+                sh 'sudo rm /opt/server/keystore.p12'
+                sh 'sudo openssl pkcs12 -export -in /etc/letsencrypt/live/app.trepechyjewels.com/fullchain.pem -inkey /etc/letsencrypt/live/app.trepechyjewels.com/privkey.pem -out /opt/server/keystore.p12 -passout pass:jewels -name tomcat'
+                sh 'sudo chmod +r /opt/server/keystore.p12'
+            }
+        }
         stage('Pull Docker registry') {
             agent {
               label 'ec2-ssh-server-node'
@@ -60,6 +70,9 @@ pipeline {
             }
         }
         stage('docker-compose up') {
+            agent {
+              label 'ec2-ssh-server-node'
+            }
             steps {
                 sh 'sudo docker-compose up -d'
             }
