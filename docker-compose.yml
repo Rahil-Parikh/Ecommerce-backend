@@ -8,6 +8,10 @@ services:
         image: jewels-springboot:latest
         ports:
             - 5001:5001
+        volumes:
+            - type: bind
+              source: /opt/server/
+              target: /opt/serving/
         networks:
             - cloud-network
     fontend:
